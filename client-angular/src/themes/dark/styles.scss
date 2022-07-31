@@ -1,0 +1,18 @@
+@import "../common/bootstrap-variables";
+@import "../common/bootstrap";
+@import "../common/app";
+
+.dark-theme {
+    background-color: #141719;
+
+    &,
+    table th,
+    table td,
+    i {
+        color: #fff;
+    }
+
+    .section-bg {
+        background-color: #2d3236;
+    }
+}
