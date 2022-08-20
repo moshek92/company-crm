@@ -1,6 +1,6 @@
-<!-- <h2 class="my-4 py-4">
+ <h2 class="my-4 py-4">
     Customers <small class="text-secondary">({{customersTotal()}})</small>
-</h2> -->
+</h2> 
 
 <app-page-title [totalItems]="customersTotal()" [title]="'Customers'"></app-page-title>
 
@@ -10,7 +10,7 @@
         <div class="me-auto p-2">
             <div class="input-group">
                 <input (keydown)="findCustomer($event)" [(ngModel)]="searchFieldValue"
-                    type="text" placeholder="Search by name, email, country"
+                    type="text" placeholder="Search by name, email"
                     class="form-control">
                 <button (click)="clearSearch()" class="btn btn-outline-secondary" type="button"
                     id="button-addon2"><i class="bi-x-lg"></i></button>
@@ -41,13 +41,7 @@
                 <label for="" class="form-label">Phone</label>
                 <input formControlName="phone" type="text" class="form-control">
             </div>
-            <div class="mb-3">
-                <label for="" class="form-label">Country</label>
-                <select formControlName="country_id" class="form-select">
-                    <option *ngFor="let country of countries" [ngValue]="country.id">
-                        {{country.name}}</option>
-                </select>
-            </div>
+          
             <button [disabled]="!customerForm.valid" type="submit"
                 class="btn btn-primary">Add</button>
         </form>
@@ -71,12 +65,7 @@
                     </button>
                 </th>
                 <th class="align-middle">Phone</th>
-                <th>
-                    Country
-                    <button (click)="sortCustomers('country_name')" class="btn btn-default">
-                        <i [ngClass]="displaySort('country_name')"></i>
-                    </button>
-                </th>
+            
             </tr>
         </thead>
         <tbody>
@@ -84,7 +73,6 @@
                 <td>{{customer.name}}</td>
                 <td>{{customer.email}}</td>
                 <td>{{customer.phone | phone}}</td>
-                <td>{{customer.country_name}}</td>
             </tr>
         </tbody>
     </table>

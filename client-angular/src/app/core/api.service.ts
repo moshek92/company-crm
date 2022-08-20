@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AddCustomer, Country, Customer, FilePath, Login, Product, RegisterUser, User } from '../shared/types';
+import { AddCustomer,  Customer, FilePath, Login, RegisterUser, User } from '../shared/types';
 
 @Injectable({
     providedIn: 'root'
@@ -38,10 +38,10 @@ export class ApiService {
         return this.GET<Array<Customer>>(`customers/find?search=${searchTerm}`);
     }
 
-    getCountries(): Observable<Array<Country>> {
+   /*  getCountries(): Observable<Array<Country>> {
         // return this.http.get<Array<Country>>(`${environment.serverUrl}/countries`);
         return this.GET<Array<Country>>(`countries`);
-    }
+    } */
 
    
     addCustomer(customer: AddCustomer): Observable<Customer> {

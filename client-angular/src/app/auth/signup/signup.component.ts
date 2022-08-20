@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { string } from 'joi';
 import { ApiService } from 'src/app/core/api.service';
 import { RegisterUser } from 'src/app/shared/types';
 
@@ -61,7 +62,7 @@ export class SignupComponent implements OnInit, AfterViewInit {
             return;
         }
 
-        const value: RegisterUser = this.signupForm.value;
+        const value : RegisterUser = this.signupForm.value;
 
         const details = {
             first_name: value.first_name,

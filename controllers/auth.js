@@ -73,22 +73,22 @@ module.exports = {
 
         const sql = `INSERT INTO users(name, email, password_hash) VALUES(?,?,?)`;
 
-        try {
-            const hash = await bcrypt.hash(value.password, 10);
-            const result = await database.query(sql, [
-                value.name,
-                value.email,
-                hash
-            ]);
+        //    try {
+        //        const hash = await bcrypt.hash(value.password, 10);
+        //        const result = await database.query(sql, [
+        //            value.name,
+        //            value.email,
+        //            hash
+        //        ]);
 
-            res.json({
-                id: result[0].insertId,
-                name: value.first_name,
-                email: value.email
-            })
-        } catch (err) {
-            console.log(err.message);
-            res.status(400).send('error sign up new user');
-        }
+        //        res.json({
+        //            id: result[0].insertId,
+        //            name: value.first_name,
+        //            email: value.email
+        //        })
+        //    } catch (err) {
+        //        console.log(err.message);
+        //        res.status(400).send('error sign up new user');
+        //    }
     }
 }

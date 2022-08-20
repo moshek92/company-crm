@@ -2,7 +2,7 @@ import { Component, NgModule, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { ApiService } from '../core/api.service';
-import { Country, Customer, CustomerSort, FilePath, sortColumn } from '../shared/types';
+import { Customer, CustomerSort, FilePath, sortColumn } from '../shared/types';
 
 @Component({
     selector: 'app-customers',
@@ -10,9 +10,9 @@ import { Country, Customer, CustomerSort, FilePath, sortColumn } from '../shared
     styleUrls: ['./customers.component.scss']
 })
 export class CustomersComponent implements OnInit {
-
+  /*   countries!: Array<Country>; */
     customers!: Array<Customer>;
-    countries!: Array<Country>;
+
     searchFieldValue!: string;
     searchTerm!: string;
     tableSort!: CustomerSort;
@@ -61,7 +61,7 @@ export class CustomersComponent implements OnInit {
     constructor(private apiService: ApiService) { }
 
     ngOnInit(): void {
-        this.getCountries();
+        //this.getCountries();
         this.getCustomers();
 
         this.tableSort = {
@@ -78,12 +78,12 @@ export class CustomersComponent implements OnInit {
         })
     }
 
-    getCountries() {
+   /*  getCountries() {
         this.apiService.getCountries().subscribe({
             next: (data: Array<Country>) => { this.countries = data },
             error: (err) => console.error(err)
         })
-    }
+    } */
 
     customersTotal(): number {
         return this.customers ? this.customers.length : 0;

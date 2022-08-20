@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/core/auth.service';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-    brandName = 'Royal CRM';
+    brandName = 'COMPANY-CRM';
     userName = 'john';
     today = new Date();
 

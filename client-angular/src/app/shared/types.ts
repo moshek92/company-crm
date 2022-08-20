@@ -3,29 +3,29 @@ export interface Customer {
     name: string;
     phone: string;
     email: string;
-    country_id: number;
+   /*  country_id: number;
     country_name: string;
-    country_code: string;
+    country_code: string; */
 }
 
 export interface AddCustomer {
     name?: string | null;
     phone?: string | null;
     email?: string | null;
-    country_id?: number | null;
+  /*   country_id?: number | null; */
 }
 
-export interface Country {
+/* export interface Country {
     id: number;
     name: string;
     country_code: string;
 }
-
+ */
 export interface FilePath {
     name: string;
 }
 
-export type sortColumn = 'name' | 'email' | 'country_name';
+export type sortColumn = 'name' | 'email'; /* | 'country_name' */
 
 export interface CustomerSort {
     column: sortColumn;
@@ -48,13 +48,13 @@ export interface Login {
 export interface User {
     token?: string;
     id: number;
-    name: string;
+    first_name: string;
     last_name: string;
     email: string;
 }
 
 export interface RegisterUser {
-    name?: string | null;
+    first_name?: string | null;
     last_name?: string | null;
     email?: string | null;
     password?: string | null;
